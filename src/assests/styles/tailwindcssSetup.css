@@ -1,0 +1,15 @@
+/* google font */
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+    background: #0a0a0a;
+    color: #9ca3af;
+}
+::-webkit-scrollbar {
+    background: #9ca3af;
+    width: 5px;
+    border-radius: 10px;
+}
