@@ -28,12 +28,13 @@ import Profile from "../pages/Profile/Profile.jsx";
 import Topic from "../pages/Topic/Topic.jsx";
 import Topquotes from "../pages/Topquotes/Topquotes.jsx";
 import TermsAndConditions from "../pages/TermsAndConditions/TermsAndConditions.jsx";
+import LoginIlustrationImage from "../assests/login.svg";
 
 export {
   AddTask, AlreadyExist, BecomeCreator, BecomeaBloger, BlogAdded, BlogIdea, BlogPosts, Dashboard,
   GetRequestedQuotes,
   Home, Ilustration, Login, LoginFaild, LoginSuccess, Logout, Notification, PageNotFound, Profile,
   Signup,  Topic,
-  Topquotes, HomePic, IlustrationForCreator, TermsAndConditions,SignupIlustration
+  Topquotes, HomePic, IlustrationForCreator, TermsAndConditions,SignupIlustration, LoginIlustrationImage
 };
 

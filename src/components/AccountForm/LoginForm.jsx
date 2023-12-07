@@ -10,8 +10,8 @@ const LoginForm = () => {
     password: "",
     imageUrl: "",
   });
-    // initailize server backend
-    const server = (import.meta.env.VITE_BACKEND_URL);
+  // initailize server backend
+  const server = import.meta.env.VITE_BACKEND_URL;
   const navigate = useNavigate();
   const onChange = (e) => {
     SetLogin({ ...login, [e.target.name]: e.target.value });
@@ -29,13 +29,13 @@ const LoginForm = () => {
     const json = await response.json();
     console.log(json);
     // save the auth token in the browser console or something went wrong navigate auth-warning page...
-  if (json.success) {
-    localStorage.setItem("token", json.authtoken);
-    // navigate   by pushing path
-    navigate("/login-success");
-  }else {
-    navigate("/login-warning"); 
-  }
+    if (json.success) {
+      localStorage.setItem("token", json.authtoken);
+      // navigate   by pushing path
+      navigate("/login-success");
+    } else {
+      navigate("/login-warning");
+    }
   };
 
   return (
@@ -48,7 +48,8 @@ const LoginForm = () => {
                 htmlFor="email"
                 className="block mb-2  font-Comfortaa font-medium text-gray-400 text-3xl"
               >
-                Your email <i className="fa-regular fa-envelope-circle-check"></i>
+                Your email{" "}
+                <i className="fa-regular fa-envelope-circle-check"></i>
               </label>
               <input
                 type="email"
@@ -110,7 +111,7 @@ const LoginForm = () => {
                   I accept the{" "}
                   <Link
                     className="font-medium text-gray-400 hover:underline "
-                    to={'/terms-and-conditions'}
+                    to={"/terms-and-conditions"}
                   >
                     Terms and Conditions
                   </Link>
@@ -118,10 +119,11 @@ const LoginForm = () => {
               </div>
             </div>
 
-            {/* <i className=""></i> */}
-           
-            <Submitbtn title="Login account " color="black" icon="fa-light fa-receipt"
-            Submit={handleSubmit}
+            <Submitbtn
+              title="Login account "
+              color="black"
+              icon="fa-light fa-receipt"
+              Submit={handleSubmit}
             />
             <AccountInfo
               sendLink="/account"
