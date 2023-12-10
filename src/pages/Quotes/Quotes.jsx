@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect , useState} from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import QouteListSkeleton from "../../components/LoadingSkeleton/QouteListSkeleton";
 import QuoteList from "../../components/QuoteList/QuoteList";
@@ -7,6 +7,7 @@ const Quotes = () => {
   const context = useContext(postContext);
   // eslint-disable-next-line no-unused-vars
   const { post, getPost, likePost , makeComment } = context;
+   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     getPost();
@@ -17,9 +18,9 @@ const Quotes = () => {
       <h1 className="text-center text-5xl font-Comfortaa max-lg:text-4xl">
         Quotes for you.
       </h1> 
+       {loading && <QouteListSkeleton />}
       <InfiniteScroll
         dataLength={post.length}
-         
         hasMore={post.length !== post}
         loader={<QouteListSkeleton /> }
       >
